@@ -14,7 +14,7 @@
             do
             {
                 Console.Clear();
-                Console.WriteLine(" -----= Menu =----- \n\n [1] - Soma \n [2] - Subtração \n [3] - Multiplicação \n [4] - Divisão \n [5] - Sair e Imprimir histórico \n\n -----=      =----- \n");
+                Console.WriteLine(" -----= Menu =----- \n\n [1] - Soma \n [2] - Subtração \n [3] - Multiplicação \n [4] - Divisão \n [5] - Tabuada \n [6] - Sair e Imprimir histórico \n\n -----=      =----- \n");
                 opcao = int.Parse(Console.ReadLine());
 
                 if (opcao == 1 || opcao == 2 || opcao == 3 || opcao == 4)
@@ -23,8 +23,21 @@
                     Console.WriteLine($" \n O resultado da conta é {resultado} \n");
                     Console.ReadLine();
                     continue;
+                } else if (opcao == 5)
+                {
+                    Console.WriteLine("Informe um número para gerar a tabuada: ");
+                    int numeroTabuada = int.Parse(Console.ReadLine());
+
+                    for (int i = 0; i <= 10; i++)
+                    {
+                        Console.WriteLine($" {i} x {numeroTabuada} = {i * numeroTabuada}");
+                    }
+
+                    historicoCalculadora.Add($"Tabuada: A tabuada do {numeroTabuada} foi gerada");
+                    Console.ReadLine();
+                    continue;
                 }
-                else if (opcao == 5)
+                else if (opcao == 6)
                 {
                     Console.WriteLine(" \n Saindo da aplicação e imprimindo histórico ...");
 
@@ -44,7 +57,7 @@
                     Console.ReadLine();
                     continue;
                 }
-            } while (opcao != 5);
+            } while (opcao != 6);
 
         }
 
@@ -96,5 +109,7 @@
             }
 
         }
-    }
+    } 
+
+
 }
